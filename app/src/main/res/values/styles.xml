@@ -1,0 +1,12 @@
+<resources>
+    <style name="ChessSquareButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:layout_margin">1dp</item>
+    </style>
+
+</resources>

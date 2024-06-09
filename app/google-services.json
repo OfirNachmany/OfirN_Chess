@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "905979034042",
+    "project_id": "chess-ofir",
+    "storage_bucket": "chess-ofir.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905979034042:android:ebb7f04897b6fd62f80583",
+        "android_client_info": {
+          "package_name": "com.example.chess"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf8WOTlA5fvdv5ywmm2CanMSEOGR6T_Xg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,169 @@
+@startuml
+class LoginActivity{
+    EditText emailField;
+    EditText loginPasswordField;
+    HashMap<String, String> loginInfo;
+    String PREF_NAME = AppConstants.PREF_NAME;
+    String PREF_KEY_EMAIL = AppConstants.PREF_KEY_EMAIL;
+    String PREF_KEY_PASSWORD;
+    FirebaseAuth mAuth;
+}
+class AppConstants{
+    String PREF_NAME;
+    String PREF_KEY_EMAIL;
+    String PREF_KEY_PASSWORD;
+    String PREF_KEY_UID;
+}
+class SignupActivity{
+FirebaseAuth mAuth;
+    EditText newEmailField;
+    EditText newUserPasswordField;
+    EditText newUsernameField;
+    RadioGroup experienceLevelGroup;
+    HashMap<String, String> loginInfo;
+    String PREF_NAME;
+    String PREF_KEY_EMAIL;
+    String PREF_KEY_PASSWORD;
+    String PREF_KEY_UID;
+    FirebaseFirestore db;
+}
+class ResetPasswordActivity{
+}
+class SelectTimeDurationActivity{
+    SeekBar mainTimeSeekBar;
+    SeekBar bonusTimeSeekBar;
+    TextView selectedTimeLabel;
+    boolean isInfinityTime;
+    int selectedMainTime;
+    int selectedBonusTime;
+}
+class ChessGameActivity{
+    CountDownTimer player1Timer;
+    CountDownTimer player2Timer;
+    long bonusTimeMillis;
+    TextView player1MainTimeTextView;
+    TextView player2MainTimeTextView;
+    long player1TimeLeft;
+    long player2TimeLeft;
+    boolean lastTurnWhiteTurn;
+    Board board;
+    CountDownTimer infinityCheckTimer;
+    int squareSize;
+    PopupWindow popupWindow;
+    GridLayout chessboardGridLayout;
+    int mainTimeInMinutes;
+    int bonusTimeInSeconds;
+    View popupView;
+    TextToSpeech textToSpeech;
+    FirebaseFirestore db;
+    boolean isResetting;
+    SensorManager mSensorManager;
+    Sensor mAccelerometer;
+    ShakeDetector mShakeDetector;
+    boolean isShakingPhoneDialogShown;
+    AlertDialog resetGameDialog;
+}
+class ShakeDetector{
+    float SHAKE_THRESHOLD_GRAVITY;
+    int SHAKE_SLOP_TIME_MS;
+    int SHAKE_COUNT_RESET_TIME_MS;
+    OnShakeListener mListener;
+    long mShakeTimestamp;
+    int mShakeCount;
+    interface OnShakeListener
+}
+
+class Board{
+    ImageView[][] boardSquares;
+    int squareSize;
+    GridLayout chessboardGridLayout;
+    Piece selectedPiece;
+    Piece previousSelectedPiece;
+    Piece lastMovedPiece;
+    int lastMovedPieceFromCol;
+    int lastMovedPieceFromRow;
+    int previousPieceCol, previousPieceRow;
+    boolean whiteTurn;
+    ArrayList<Piece> pieceList;
+    CheckScanner checkScanner;
+    int fiftyMoveRuleIndex;
+    boolean isGameOver;
+    List<String> positionHistory;
+    boolean isCheckmate;
+    boolean isStalemate;
+    boolean isSwitchTurns;
+    int lastMovedPieceMovedToCol;
+    int lastMovedPieceMovedToRow;
+    boolean isCaptureMove;
+    String capturedPieceName;
+    boolean wasLastMoveEnPassant;
+    boolean canTwoPiecesMoveToSameCol;
+    boolean canTwoPiecesMoveToSameRow;
+}
+class CheckScanner{
+    Board board;
+    Piece checkingPiece;
+}
+class Move{
+    int oldCol;
+    int oldRow;
+    int newCol;
+    int newRow;
+    Piece piece;
+    Piece capture;
+    Piece pieceMoved;
+    int sourceRow;
+    int sourceCol;
+    int destinationRow;
+    int destinationCol;
+    Piece capturedPiece;
+    boolean promotion;
+}
+abstract class Piece{
+    int col, row;
+    boolean isWhite;
+    String name;
+    int value;
+    boolean isFirstMove;
+    ImageView imageView;
+    Bitmap spriteSheet;
+    int pieceSize = 100;
+    int calculateXOffsetBasedOnTypeAndColor();
+    int calculateYOffsetBasedOnTypeAndColor();
+    Board board;
+    float initialX, initialY;
+    float targetX, targetY;
+    int animationDuration;
+    Handler handler;
+}
+class Bishop extends Piece{
+    Board board;
+}
+class King extends Piece{
+    Board board;
+}
+class Knight extends Piece {
+}
+class Pawn extends Piece{
+    Board board;
+}
+class Queen extends Piece{
+    Board board;
+}
+class Rook extends Piece{
+    Board board;
+}
+
+LoginActivity <--> SignupActivity
+LoginActivity <--> AppConstants
+LoginActivity <--> ResetPasswordActivity
+LoginActivity <--> ChessGameActivity
+SignupActivity <--> AppConstants
+LoginActivity <--> SelectTimeDurationActivity
+SelectTimeDurationActivity <--> ChessGameActivity
+ChessGameActivity --> ShakeDetector
+ChessGameActivity --> Board
+Board --> CheckScanner
+Board --> Piece
+Board --> Move
+@enduml

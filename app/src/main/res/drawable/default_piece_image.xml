@@ -1,0 +1,7 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+        <!-- Replace these values with the correct coordinates for your piece on the sprite sheet -->
+        <item android:drawable="@drawable/chess_pieces"
+            android:gravity="fill_vertical|fill_horizontal|top|start" />
+    </layer-list>
+</selector>

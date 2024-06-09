@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Chess</string>
+    <string name="hint_new_user_id">Email</string>
+    <string name="hint_new_user_password">Password</string>
+    <string name="radio_new_to_chess">New to Chess</string>
+    <string name="radio_Beginner">Beginner</string>
+    <string name="radio_Intermediate">Intermediate</string>
+    <string name="radio_Advanced">Advanced</string>
+    <string name="button_create_account">register</string>
+    <string name="hint_user_id">Enter your username</string>
+    <string name="hint_password">Enter your Password</string>
+    <string name="button_login">Login</string>
+    <string name="button_sign_up">Sign Up</string>
+    <string name="piece_content_description">Description of your piece</string>
+    <string name="open_menu">Open Menu</string>
+    <string name="change_timer_duration">Change Timer Duration</string>
+    <string name="close">Close</string>
+    <string name="log_out">Log Out</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="email">email</string>
+    <string name="flip">flip</string>
+    <string name="forgot_password">forgot password?</string>
+    <string name="default_message">Default Message</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="close_button_description">close button description</string>
+    <string name="login">Login</string>
+    <string name="login_with_google">Login with google</string>
+    <string name="or_login_with">or login with:</string>
+    <string name="reset_game">Reset Game</string>
+    <string name="username">username</string>
+</resources>
